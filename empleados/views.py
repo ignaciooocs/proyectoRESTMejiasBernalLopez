@@ -1,15 +1,21 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import viewsets
 from rest_framework import status
 from .models import Empleado
 from .serializers import EmpleadoSerializer
 from django.shortcuts import render
 
+class EmpleadoViewSet(viewsets.ModelViewSet):
+    queryset = Empleado.objects.all()  # Obtiene todos los empleados
+    serializer_class = EmpleadoSerializer
+
 @api_view(['GET'])
 def lista_empleados(request):
     empleados = Empleado.objects.all()
-    serializer = EmpleadoSerializer(empleados, many=True)
+    serializer = EmpleadoSerializer(empleados, many=True, context={'request': request})
     return Response(serializer.data)
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def detalle_empleado(request, pk):

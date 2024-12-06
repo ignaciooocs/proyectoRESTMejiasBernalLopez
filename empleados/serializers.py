@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Empleado
 
-class EmpleadoSerializer(serializers.ModelSerializer):
+class EmpleadoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Empleado
-        fields = '__all__'
+        fields = ['url', 'id', 'nombre', 'apellido', 'email', 'telefono', 'puesto', 'salario']
