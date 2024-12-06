@@ -1,8 +1,38 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Api RESTful</title>
+</head>
+<body class="bg-gray-100 min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <!-- Barra de Navegación -->
+    <nav class="bg-blue-500 text-white shadow">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-lg font-bold">Gestión de Proyectos</a>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="/" class="hover:underline">Inicio</a>
+                </li>
+                <li>
+                    <a href="/admin" class="hover:underline">admin</a>
+                </li>
+                <li>
+                    <a href="empleadosListApi" class="hover:underline">Lista de empleados</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-{% block title %}Api RESTful{% endblock %}
+    <!-- Contenido Principal -->
+    <main class="container mx-auto mt-6 px-4">
+        <h1 class="text-3xl font-bold text-blue-500 mb-6">Bienvenido a la Api RESTful</h1>
+    </main>
 
-{% block content %}
-<h1 class="text-3xl font-bold text-blue-500 mb-6">Este es el index</h1>
-
-{% endblock %}
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8 mt-10">
+        <p>&copy; 2024 Gestión de Proyectos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
